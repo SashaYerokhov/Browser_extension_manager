@@ -10,17 +10,12 @@
   --red-400: hsl(3, 86%, 64%);
   --red-500: hsl(3, 71%, 56%);
   --red-700: hsl(3, 77%, 44%);
-  /* --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%); */
-  /* --light-gradient: hcl(210°, 7.5, 96); */
   --background: hsl(206, 67%, 95%);
   --background-block: hsl(220, 100%, 99%);
   --color: hsl(226, 25%, 17%);
   --bg-button: hsl(220, 100%, 99%);
   --bg-toggle: hsl(240, 2%, 78%);
   --bg-theme: hsl(250, 20%, 94%);
-  /* --light-gradient:  */
-  /* --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%); */
-  /* --dark-gradient: hsl(229, 73%, 10%); */
 }
 body.dark-theme {
   --background: hsl(227, 74%, 7%);
@@ -200,10 +195,10 @@ p {
   margin-block: 0;
 }
 .extensions__item-down {
-  margin-top: auto; /* Прижимает блок с кнопкой к низу */
+  margin-top: auto; 
   display: flex;
-  justify-content: space-between; /* Кнопка слева, переключатель справа */
-  align-items: center; /* Выравнивание по вертикали */
+  justify-content: space-between; 
+  align-items: center; 
 }
 .remove-btn {
   border: 1px solid var(--neutral-300);
@@ -239,7 +234,6 @@ label:focus-visible {
   border-radius: 20px;
 }
 .switch input {
-  /* скрыли чекбокс*/
   opacity: 1;
   width: 0;
   height: 0;
@@ -269,9 +263,6 @@ label:focus-visible {
   box-shadow: 0 0.2rem 5rem var(--background);
   transition: 0.5s;
 }
-
-/* Инпут чекед сосед с .move  и у них общий родитель label */
-
 input:checked + .move {
   background: var(--red-400);
   border: 0.1rem solid transparent;

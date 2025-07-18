@@ -1,5 +1,3 @@
-// Переключение темы светлая - темная
-// попробуем сократить код - функцию перелкючения - отдельно и добавить вызов сюда
 const buttonSun = document.querySelector(".btn-sun");
 const buttonMoon = document.querySelector(".btn-moon");
 
@@ -27,35 +25,27 @@ buttonSun.addEventListener("click", () => {
 });
 
 
-
-/**
- * Кнопка удаление блока и свитч переключение хотя бы найти в дом-элементе
- */
-
 const extensionsBlock = document.querySelector(".extensions__block");
 
 extensionsBlock.addEventListener("click", (event) => {
-  // Проверяем, был ли клик по кнопке Remove
+
   if (event.target.classList.contains("remove-btn")) {
-    // Находим ближайший родительский элемент .extensions__content
+
     const content = event.target.closest(".extensions__content");
 
     if (content) {
-      // Удаляем элемент из DOM
-      // content.remove();
+
       content.style.opacity = "0";
       setTimeout(() => content.remove(), 300); // удаление после анимации
 
-      // Или, если вы хотите просто скрыть:
-      // content.style.display = "none";
+
     }
   }
 
-  // const checkBox = event.target.closest("input");
-  // console.log(checkBox);
+
 });
 
-// Обработчик для всех переключателей
+
 extensionsBlock.addEventListener("change", (event) => {
   if (event.target.classList.contains("toggle-switch")) {
     const card = event.target.closest(".extensions__item");
@@ -63,15 +53,15 @@ extensionsBlock.addEventListener("change", (event) => {
 
     if (event.target.checked) {
       console.log(`Toggle for ${itemName} is ON`);
-      // Действия при включении
+  
     } else {
       console.log(`Toggle for ${itemName} is OFF`);
-      // Действия при выключении
+   
     }
   }
 });
 
-      // Функция фильтрации карточек
+
       const filterCards = (filterType) => {
         const cards = document.querySelectorAll('.extensions__content');
         
@@ -93,7 +83,7 @@ extensionsBlock.addEventListener("change", (event) => {
         });
       };
 
-      // Обработчики для кнопок фильтрации
+
       document.querySelector('.all-btn').addEventListener('click', () => {
         updateActiveButton('all');
         filterCards('all');
@@ -109,7 +99,7 @@ extensionsBlock.addEventListener("change", (event) => {
         filterCards('inactive');
       });
 
-            // Функция для обновления активной кнопки
+
       const updateActiveButton = (activeType) => {
         document.querySelector('.all-btn').classList.remove('active');
         document.querySelector('.active-btn').classList.remove('active');
@@ -118,7 +108,6 @@ extensionsBlock.addEventListener("change", (event) => {
         document.querySelector(`.${activeType}-btn`).classList.add('active');
       };
 
-// Создание основного контента через JSON
 async function loadJson(filePath) {
   try {
     const response = await fetch(filePath);
